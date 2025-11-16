@@ -37,3 +37,7 @@ On global pip to change the color scheme of jupyter
 `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
 
 ### ghostty
+
+### mpv
+
+Just some basic configuration to not show me blackscreen
