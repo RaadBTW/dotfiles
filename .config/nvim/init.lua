@@ -1038,3 +1038,12 @@ require("lspconfig").clangd.setup({
 	end,
 })
 vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>Navbuddy<CR>", { noremap = true, silent = true })
+
+-- Notify Background
+require("notify").setup({
+	background_colour = "#000000",
+})
+
+vim.cmd([[
+  highlight NotifyBackground guibg=#000000 ctermbg=0
+]])
