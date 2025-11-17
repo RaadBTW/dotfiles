@@ -1032,11 +1032,11 @@ vim.api.nvim_set_keymap("i", "<A-i>", "<Esc><cmd>ToggleTerm<CR>", { noremap = tr
 
 -- NavBuddy
 local navbuddy = require("nvim-navbuddy")
-require("lspconfig").clangd.setup({
+vim.lsp.config.clangd = {
 	on_attach = function(client, bufnr)
 		navbuddy.attach(client, bufnr)
 	end,
-})
+}
 vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>Navbuddy<CR>", { noremap = true, silent = true })
 
 -- Notify Background

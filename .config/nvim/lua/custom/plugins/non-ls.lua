@@ -24,9 +24,9 @@ return {
 		})
 
 		-- Now setup Lua language server (sumneko_lua) for Lua LSP features
-		local lspconfig = require("lspconfig")
+		-- local lspconfig = require("lspconfig")
 
-		lspconfig.lua_ls.setup({
+		vim.lsp.config.lua_ls = {
 			settings = {
 				Lua = {
 					runtime = {
@@ -44,6 +44,6 @@ return {
 					},
 				},
 			},
-		})
+		}
 	end,
 }
