@@ -81,9 +81,3 @@ eval "$(fzf --zsh)"
 
 PATH=$PATH:/usr/local/go/bin
 alias v2rayN='~/Music/v2rayN-linux-64/v2rayN'
-
-if [[ -n $TMUX ]]; then
-  # Disable precmd and preexec functions for title updates
-  function precmd() { :; }
-  function preexec() { :; }
-fi
