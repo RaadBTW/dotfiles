@@ -2,6 +2,13 @@
 
 `sudo dnf install stow`
 
+## Omarchy 
+`bash
+wpctl status
+wpctl set-volume 52 1.0
+`
+
+
 ## git
 `git config --global alias.addcom '!git add . && git commit'`
 
