@@ -1030,15 +1030,6 @@ vim.api.nvim_set_keymap("n", "<A-i>", "<cmd>ToggleTerm<CR>", { noremap = true, s
 vim.api.nvim_set_keymap("t", "<A-i>", "<C-\\><C-n><cmd>ToggleTerm<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<A-i>", "<Esc><cmd>ToggleTerm<CR>", { noremap = true, silent = true })
 
--- NavBuddy
-local navbuddy = require("nvim-navbuddy")
-vim.lsp.config.clangd = {
-	on_attach = function(client, bufnr)
-		navbuddy.attach(client, bufnr)
-	end,
-}
-vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>Navbuddy<CR>", { noremap = true, silent = true })
-
 -- Notify Background
 require("notify").setup({
 	background_colour = "#000000",
