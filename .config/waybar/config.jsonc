@@ -1,155 +1,298 @@
 // -*- mode: jsonc -*-
+// {
+//     // "layer": "top", // Waybar at top layer
+//     // "position": "bottom", // Waybar position (top|bottom|left|right)
+//     "height": 32, // Waybar height (to be removed for auto height)
+//     // "width": 1280, // Waybar width
+//     //"spacing": 4, // Gaps between modules (4px)
+//     "modules-left": [
+// 	"hyprland/workspaces",
+//         "custom/media"
+//     ],
+//     "modules-center": [
+//         "sway/window"
+//     ],
+//     "modules-right": [
+//         "pulseaudio",
+//         "network",
+//         //"power-profiles-daemon",
+//         "cpu",
+//         "backlight",
+//         "keyboard-state",
+//         "sway/language",
+//         "clock",
+//     ],
+//         "backlight": {
+// 	"interval": 2,
+// 	"align": 0,
+// 	"rotate": 0,
+// 	//"format": "{icon} {percent}%",
+// 	"format-icons": [
+// 		" ",
+// 		" ",
+// 		" ",
+// 		"󰃝 ",
+// 		"󰃞 ",
+// 		"󰃟 ",
+// 		"󰃠 "
+// 	],
+// 	"format": "{icon}",
+// 	//"format-icons": ["","","","","","","","","","","","","","",""],
+// 	"tooltip-format": "backlight {percent}%",
+// 	"icon-size": 10,
+// 	"on-click": "",
+// 	"on-click-middle": "",
+// 	"on-click-right": "",
+// 	"on-update": "",
+// 	"on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
+// 	"on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
+// 	"smooth-scrolling-threshold": 1,
+// },
+//
+//     "sway/mode": {
+//         "format": "<span style=\"italic\">{}</span>"
+//     },
+//     "sway/scratchpad": {
+//         "format": "{icon} {count}",
+//         "show-empty": false,
+//         "format-icons": ["", ""],
+//         "tooltip": true,
+//         "tooltip-format": "{app}: {title}"
+//     },
+//     //     "clock": {
+//     //     // "timezone": "America/New_York",
+//     //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+//     //     "format-alt": "{:%Y-%m-%d}"
+//     // },
+//  	"clock": {
+// 	"interval": 1,
+//     //"format": " {:%I:%M %p}", // AM PM format
+//     "format": " {:%H:%M:%S}", // 24H
+// 	"format-alt": " {:L%H:%M   %Y, %d %B, %A}",
+// 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+// 	"calendar": {
+// 		"mode": "year",
+// 		"mode-mon-col": 3,
+// 		"weeks-pos": "right",
+// 		"on-scroll": 1,
+// 		"format": {
+// 			"months": "<span color='#ffead3'><b>{}</b></span>",
+// 			"days": "<span color='#ecc6d9'><b>{}</b></span>",
+// 			"weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+// 			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+// 			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+// 		}
+// 	}
+// },
+//     "network": {
+//         // "interface": "wlp2*", // (Optional) To force the use of this interface
+//         "format-wifi": "{essid} ({signalStrength}%) ",
+//         "format-ethernet": "{ipaddr}/{cidr} ",
+//         "tooltip-format": "{ifname} via {gwaddr} ",
+//         "format-linked": "{ifname} (No IP) ",
+//         "format-disconnected": "Disconnected ⚠",
+//         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+//     },
+// 	"pulseaudio": {
+//         // "scroll-step": 1, // %, can be a float
+//         "format": "{volume}% {icon} {format_source}",
+//         "format-bluetooth": "{volume}% {icon} {format_source}",
+//         "format-bluetooth-muted": " {icon} {format_source}",
+//         "format-muted": " {format_source}",
+//         "format-source": "{volume}% ",
+//         "format-source-muted": "",
+//         "format-icons": {
+//             "headphone": "",
+//             "hands-free": "",
+//             "headset": "",
+//             "phone": "",
+//             "portable": "",
+//             "car": "",
+//             "default": ["", "", ""]
+//         },
+//         "on-click": "pavucontrol"
+//     },
+//     "custom/media": {
+//         "format": "{icon} {text}",
+//         "return-type": "json",
+//         "max-length": 40,
+//         "format-icons": {
+//             "spotify": "",
+//             "default": "🎜"
+//         },
+//         "escape": true,
+//         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+//         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+//     },
+//     "custom/power": {
+//         "format" : "⏻ ",
+// 		"tooltip": false,
+// 		"menu": "on-click",
+// 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+// 		"menu-actions": {
+// 			"shutdown": "shutdown",
+// 			"reboot": "reboot",
+// 			"suspend": "systemctl suspend",
+// 			"hibernate": "systemctl hibernate"
+// 		}
+//     },
+// 	"hyprland/workspaces": {
+// 	"active-only": false,
+// 	"all-outputs": true,
+// 	"format": "{icon}",
+// 	"show-special": false,
+// 	"on-click": "activate",
+// 	"on-scroll-up": "hyprctl dispatch workspace e+1",
+// 	"on-scroll-down": "hyprctl dispatch workspace e-1",
+//     "persistent-workspaces": {
+//       "*": 5
+// 	},
+// 	"format-icons": {
+// 		"active": "",
+// 		"default": "",
+// 	},
+// },
+// }
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    //"spacing": 4, // Gaps between modules (4px)
-    "modules-left": [
-	"hyprland/workspaces",
-        "custom/media"
-    ],
-    "modules-center": [
-        "sway/window"
-    ],
-    "modules-right": [
-        "pulseaudio",
-        "network",
-        //"power-profiles-daemon",
-        "cpu",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "clock",
-    ],
-        "backlight": {
-	"interval": 2,
-	"align": 0,
-	"rotate": 0,
-	//"format": "{icon} {percent}%",
-	"format-icons": [
-		" ",
-		" ",
-		" ",
-		"󰃝 ",
-		"󰃞 ",
-		"󰃟 ",
-		"󰃠 "
-	],
-	"format": "{icon}",
-	//"format-icons": ["","","","","","","","","","","","","","",""],
-	"tooltip-format": "backlight {percent}%",
-	"icon-size": 10,
-	"on-click": "",
-	"on-click-middle": "",
-	"on-click-right": "",
-	"on-update": "",
-	"on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
-	"on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
-	"smooth-scrolling-threshold": 1,
-},
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    //     "clock": {
-    //     // "timezone": "America/New_York",
-    //     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    //     "format-alt": "{:%Y-%m-%d}"
-    // },
- 	"clock": {
-	"interval": 1,
-    //"format": " {:%I:%M %p}", // AM PM format
-    "format": " {:%H:%M:%S}", // 24H
-	"format-alt": " {:L%H:%M   %Y, %d %B, %A}",
-	"tooltip-format": "<tt><small>{calendar}</small></tt>",
-	"calendar": {
-		"mode": "year",
-		"mode-mon-col": 3,
-		"weeks-pos": "right",
-		"on-scroll": 1,
-		"format": {
-			"months": "<span color='#ffead3'><b>{}</b></span>",
-			"days": "<span color='#ecc6d9'><b>{}</b></span>",
-			"weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
-			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-		}
-	}
-},
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+	"layer": "top",
+	"modules-left": ["custom/launcher","cpu","memory","disk","hyprland/workspaces"],
+	"modules-center": ["clock"],
+	"modules-right": ["keyboard-state" ,"custom/keybinds","tray","cava","hyprland/language","backlight","pulseaudio","battery","custom/power"],
+	
 	"pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format" : "⏻ ",
 		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
+		"scroll-step": 5,
+		"format": "{icon}  {volume}%",
+		"format-muted": "muted",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": ["", "", ""]
 		}
+	},
+    "cava": {
+            "framerate": 240,
+            "autosens": 1,
+            "sensitivity": 5,
+            "bars": 8,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 10000,
+            "method": "pulse",
+            "source": "auto",
+            "stereo": false,
+            "reverse": false,
+            "bar_delimiter": 0,
+            "monstercat": true,
+            "waves": true,
+            "noise_reduction": 0.77,
+            "input_delay": 0,
+            "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+             },
+
+    "custom/keybinds": {
+        "format": "{icon} KB",
+        "format-icons": ["󰘳"],
+        "on-click": "bash ~/Documents/themes/keybinds/keybinds.sh"
     },
-	"hyprland/workspaces": {
-	"active-only": false,
-	"all-outputs": true,
-	"format": "{icon}",
-	"show-special": false,
-	"on-click": "activate",
-	"on-scroll-up": "hyprctl dispatch workspace e+1",
-	"on-scroll-down": "hyprctl dispatch workspace e-1",
-    "persistent-workspaces": {
-      "*": 5
-	},
-	"format-icons": {
-		"active": "",
-		"default": "",
-	},
-},
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+    "keyboard-state": {
+    "numlock": false,
+    "capslock": true,
+    "format": "{icon} {name}",
+    "format-icons": {
+        "locked": "",
+        "unlocked": ""
+    }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "disk": {
+        "interval": 30,
+        "format": "  {percentage_used}%",
+        "path": "/"
+    },
+    "privacy": {
+        "icon-spacing": 10,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "tooltip": false,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "hyprland/language": {
+        "format": "  {1}",
+        "tooltip": false,
+    },
+    "cpu": {
+        "interval": 15,
+        "format": "  {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "max-length": 10
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi",
+        "tooltip": false,
+    },
+    "custom/power":{
+        "format": "⏻ ",
+        "tooltip": false,
+        "on-click": "bash ~/.config/rofi/powermenu.sh",
+        "on-click-right": "killall rofi",
+    },
+    "clock": {
+        "format": "  {:%A - %B %d, %Y - %R}",
+        "tooltip": false,
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "tooltip": false,
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+    },
+    },
 }
