@@ -9,15 +9,15 @@ mouse-hide-while-typing = true
 window-save-state = always
 
 
-keybind = super+s=reload_config
+#keybind = super+s=reload_config
 
 #keybind = super+s+n=new_windows
 
 # tabs
-keybind = super+shift+c=new_tab
+#keybind = super+shift+c=new_tab
 
-keybind = super+shift+l=next_tab
-keybind = super+shift+h=previous_tab
+#keybind = super+shift+l=next_tab
+#keybind = super+shift+h=previous_tab
 
 # quick tab switch
 #keybind = super+s+1=goto_tab:1
