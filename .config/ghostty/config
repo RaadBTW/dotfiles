@@ -31,3 +31,6 @@ keybind = super+shift+h=previous_tab
 #keybind = super+s+9=goto_tab:9
 
 copy-on-select = clipboard
+window-decoration = none
+gtk-titlebar = false
+
