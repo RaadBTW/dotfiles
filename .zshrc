@@ -82,4 +82,4 @@ eval "$(fzf --zsh)"
 PATH=$PATH:/usr/local/go/bin
 PATH="$PATH:$HOME/go/bin"
 
-alias v2rayN='~/Music/v2rayN-linux-64/v2rayN'
+alias nv="nvim"
