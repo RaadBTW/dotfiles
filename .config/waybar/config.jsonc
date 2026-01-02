@@ -1,7 +1,8 @@
 {
 	"layer": "top",
 	// "modules-left": ["hyprland/workspaces"],
-	"modules-center": ["clock"],
+	"modules-left": ["network"],
+	//"modules-center": ["clock"],
 	"modules-right": ["hyprland/language","backlight","pulseaudio"],
 	
 	"pulseaudio": {
@@ -14,6 +15,17 @@
 			"default": ["", "", ""]
 		}
 	},
+	
+"network": {
+    "interval": 2,
+    "interface": "en*", 
+    "format": "{bandwidthDownBytes} ↓  {bandwidthUpBytes} ↑",
+    "format-ethernet": "{bandwidthDownBytes} ↓ {bandwidthUpBytes} ↑",
+    "format-wifi": "{bandwidthDownBytes} ↓ {bandwidthUpBytes} ↑",
+    "tooltip-format": "{ifname}: {bandwidthDownBytes}/s down, {bandwidthUpBytes}/s up",
+    "tooltip-format-disconnected": "Disconnected"
+},
+
     "hyprland/language": {
         "format": "  {1}",
         "tooltip": false,
