@@ -1,9 +1,9 @@
 {
 	"layer": "top",
 	// "modules-left": ["hyprland/workspaces"],
-	"modules-left": ["network"],
+	"modules-left": ["network", "tray"],
 	//"modules-center": ["clock"],
-	"modules-right": ["hyprland/language","backlight","pulseaudio"],
+	"modules-right": ["hyprland/language","pulseaudio"],
 	
 	"pulseaudio": {
 		"tooltip": false,
@@ -15,7 +15,10 @@
 			"default": ["", "", ""]
 		}
 	},
-	
+"tray": {
+    "spacing": 10,
+    "icon-size": 16
+},
 "network": {
     "interval": 2,
     "interface": "en*", 
