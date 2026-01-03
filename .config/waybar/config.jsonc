@@ -13,7 +13,8 @@
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"format-icons": {
 			"default": ["", "", ""]
-		}
+		},
+		"max-volume": 200,
 	},
 "tray": {
     "spacing": 10,
