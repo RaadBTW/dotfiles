@@ -83,3 +83,4 @@ PATH=$PATH:/usr/local/go/bin
 PATH="$PATH:$HOME/go/bin"
 
 alias nv="nvim"
+alias go-proj="cd ~/Desktop/goProjects/"
