@@ -1070,3 +1070,8 @@ vim.g.vrc_get_default_mapping = 0
 vim.g.vrc_output_buffer_name = "_OUTPUT.json"
 vim.g.vrc_response_default_content_type = "application/json"
 vim.g.vrc_auto_format_resposne_patterns = { json = "jq" }
+
+-- line number
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#00ff00", bold = true })
