@@ -1047,23 +1047,6 @@ vim.cmd([[
   highlight NotifyBackground guibg=#000000 ctermbg=0
 ]])
 
--- LAtex
-vim.lsp.config.ltex = {
-	filetypes = { "markdown", "text", "gitcommit", "txt", "rmd" },
-	settings = {
-		ltex = {
-			language = "en-US",
-			additionalRules = {
-				enablePickyRules = true,
-				motherTongue = "en",
-			},
-			ltex_lsp = {
-				additionalLaTeXPackages = { "amsmath", "amsfonts" },
-			},
-		},
-	},
-}
-
 -- vim rest
 
 vim.g.vrc_get_default_mapping = 0
