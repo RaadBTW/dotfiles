@@ -5,18 +5,16 @@ return {
 
 		null_ls.setup({
 			sources = {
-				null_ls.builtins.formatting.gofmt, -- Go formatter
-				null_ls.builtins.formatting.markdownlint_cli2,
-				null_ls.builtins.formatting.htmlbeautifier, -- HTML formatting
+				null_ls.builtins.formatting.gofmt,
+				null_ls.builtins.formatting.htmlbeautifier,
 				null_ls.builtins.diagnostics.htmlhint,
-				-- You can add other null-ls sources here if needed
 			},
+
+			-- Format on save
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
-					-- Create group first, then clear autocmds
 					local group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 					vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
-
 					vim.api.nvim_create_autocmd("BufWritePre", {
 						group = group,
 						buffer = bufnr,
@@ -28,9 +26,7 @@ return {
 			end,
 		})
 
-		-- Now setup Lua language server (sumneko_lua) for Lua LSP features
-		-- local lspconfig = require("lspconfig")
-
+		-- Lua LSP
 		vim.lsp.config.lua_ls = {
 			settings = {
 				Lua = {

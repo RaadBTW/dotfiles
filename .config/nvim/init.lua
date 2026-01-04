@@ -482,7 +482,7 @@ require("lazy").setup({
 			-- Automatically install LSPs and related tools to stdpath for Neovim
 			-- Mason must be loaded before its dependents so we need to set it up here.
 			-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-			{ "mason-org/mason.nvim", opts = {}, ensure_installed = { "html-lsp", "htmx-lsp" } },
+			{ "mason-org/mason.nvim", opts = {}, ensure_installed = {} },
 			"mason-org/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
@@ -707,6 +707,14 @@ require("lazy").setup({
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 							-- diagnostics = { disable = { 'missing-fields' } },
 						},
+					},
+				},
+				html = {},
+				templ = {
+					cmd = { "templ", "lsp" }, -- Requires `go install github.com/a-h/templ/cmd/templ@latest`
+					filetypes = { "templ", "html" }, -- Add "html" for .html with templ
+					init_options = {
+						templateMagicImportComments = true,
 					},
 				},
 			}
@@ -1040,7 +1048,6 @@ vim.cmd([[
 ]])
 
 -- LAtex
-
 vim.lsp.config.ltex = {
 	filetypes = { "markdown", "text", "gitcommit", "txt", "rmd" },
 	settings = {
