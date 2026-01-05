@@ -11,7 +11,8 @@ sudo pacman -Syu npm
 ```
 
 ```bash
-npm install -g markdownlint-cli2
+sudo npm install -g markdownlint-cli2
+sudo npm install -g htmlhint
 ```
 
 ```html
