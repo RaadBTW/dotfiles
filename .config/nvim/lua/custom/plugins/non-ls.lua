@@ -7,7 +7,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.htmlbeautifier,
-				null_ls.builtins.diagnostics.htmlhint,
+				-- null_ls.builtins.diagnostics.htmlhint,
 			},
 
 			-- Format on save
