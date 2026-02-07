@@ -1150,3 +1150,10 @@ require("comfy-line-numbers").setup({
 	hidden_file_types = { "undotree" },
 	hidden_buffer_types = { "terminal", "nofile" },
 })
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	pattern = "*",
+	callback = function()
+		vim.cmd("normal! zz")
+	end,
+})
