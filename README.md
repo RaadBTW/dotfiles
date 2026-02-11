@@ -1,6 +1,6 @@
 # First install the stow
 
-`sudo dnf install stow`
+`sudo pacman -S stow`
 
 ## Nvim
 
@@ -17,6 +17,16 @@ sudo npm install -g htmlhint
 
 ```html
 https://github.com/fatih/gomodifytags
+```
+
+```bash
+sudo pacman -S tree-sitter tree-sitter-cli
+```
+
+then inside nvim :
+
+```nvim
+TSInstall! templ go
 ```
 
 ## tmux
