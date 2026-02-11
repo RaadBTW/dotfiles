@@ -972,6 +972,17 @@ require("lazy").setup({
 			},
 			indent = { enable = true, disable = { "ruby" } },
 		},
+		config = function(_, opts)
+			require("nvim-treesitter.config").setup(opts)
+
+			-- Force Tree-sitter start on Go filetype (workaround for auto-start issues)
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "go",
+				callback = function()
+					vim.treesitter.start(0, "go")
+				end,
+			})
+		end,
 		-- There are additional nvim-treesitter modules that you can use to interact
 		-- with nvim-treesitter. You should go explore a few and see what interests you:
 		--
@@ -1157,3 +1168,10 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.cmd("normal! zz")
 	end,
 })
+
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "go",
+-- 	callback = function()
+-- 		vim.treesitter.start(0, "go")
+-- 	end,
+-- })
