@@ -977,9 +977,9 @@ require("lazy").setup({
 
 			-- Force Tree-sitter start on Go filetype (workaround for auto-start issues)
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = "go",
+				pattern = { "go", "templ" },
 				callback = function()
-					vim.treesitter.start(0, "go")
+					vim.treesitter.start(0, vim.bo.filetype)
 				end,
 			})
 		end,
