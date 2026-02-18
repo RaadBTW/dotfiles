@@ -148,3 +148,43 @@ vim.fn.setreg(
 	"h",
 	"ifunc x() gin.HandlerFunc {" .. cr .. "return func(c *gin.Context) {" .. cr .. "}" .. cr .. "}" .. esc .. "3k0wciw"
 )
+
+-- golang gin
+vim.fn.setreg(
+	"g",
+	"iimport ("
+		.. cr
+		.. '"log"'
+		.. cr
+		.. '"net/http"'
+		.. cr
+		.. '"github.com/gin-gonic/gin"'
+		.. cr
+		.. ")"
+		.. cr
+		.. cr
+		.. cr
+		.. "func main() {"
+		.. cr
+		.. "router := gin.Default()"
+		.. cr
+		.. cr
+		.. 'router.GET("/ping", func(c *gin.Context) {'
+		.. cr
+		.. "c.JSON(http.StatusOK, gin.H{"
+		.. cr
+		.. '"message": "pong",'
+		.. cr
+		.. "})"
+		.. cr
+		.. "})"
+		.. cr
+		.. "if err := router.Run(GIN_PORT); err != nil {"
+		.. cr
+		.. 'log.Fatalf("failed to run server: %v", err)'
+		.. cr
+		.. "}"
+		.. cr
+		.. "}"
+		.. esc
+)
