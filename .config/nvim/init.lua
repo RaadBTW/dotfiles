@@ -1183,3 +1183,6 @@ vim.keymap.set("n", "<End>", '<cmd>echo "Use $ to go end!!"<CR>')
 -- If you also want to block them in insert/visual:
 vim.keymap.set({ "i", "v" }, "<Home>", '<cmd>echo "Use 0/^ in normal mode!!"<CR>')
 vim.keymap.set({ "i", "v" }, "<End>", '<cmd>echo "Use $ in normal mode!!"<CR>')
+
+vim.keymap.set("i", "jk", "<Esc>", { silent = true })
+vim.keymap.set("v", "jk", "<Esc>", { silent = true })
