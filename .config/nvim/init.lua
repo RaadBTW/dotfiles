@@ -125,3 +125,19 @@ require("lazy").setup({
 	},
 	change_detection = { notify = false },
 })
+
+-- Macros
+local cr = vim.api.nvim_replace_termcodes("<CR>", true, true, true)
+local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
+
+-- Golang error handling
+vim.fn.setreg("e", "iif err != nil {" .. cr .. "}" .. esc .. "O")
+
+-- sql show all the tables
+vim.fn.setreg(
+	"s",
+	"i SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'  AND table_type = 'BASE TABLE' ORDER BY table_name;"
+)
+
+-- golang log the error
+vim.fn.setreg("l", "i clogger.Error(" .. cr .. 'fmt.Sprintf("",err),' .. cr .. ")" .. esc .. "k10h")
