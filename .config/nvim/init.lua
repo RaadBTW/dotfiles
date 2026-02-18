@@ -179,7 +179,7 @@ vim.fn.setreg(
 		.. cr
 		.. "})"
 		.. cr
-		.. "if err := router.Run(GIN_PORT); err != nil {"
+		.. "if err := router.Run(os.Getenv(GIN_PORT)); err != nil {"
 		.. cr
 		.. 'log.Fatalf("failed to run server: %v", err)'
 		.. cr
