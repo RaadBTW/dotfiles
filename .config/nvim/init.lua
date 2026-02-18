@@ -142,3 +142,9 @@ vim.fn.setreg(
 
 -- golang log the error
 vim.fn.setreg("l", "i clogger.Error(" .. cr .. 'fmt.Sprintf("",err),' .. cr .. ")" .. esc .. "k10h")
+
+-- golan gin Handler func
+vim.fn.setreg(
+	"h",
+	"ifunc x() gin.HandlerFunc {" .. cr .. "return func(c *gin.Context) {" .. cr .. "}" .. cr .. "}" .. esc .. "3k0wciw"
+)
