@@ -137,6 +137,7 @@ vim.fn.setreg("e", "iif err != nil {" .. cr .. "}" .. esc .. "O")
 vim.fn.setreg(
 	"s",
 	"i SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'  AND table_type = 'BASE TABLE' ORDER BY table_name;"
+		.. esc
 )
 
 -- golang log the error
